@@ -1,0 +1,28 @@
+nav {
+    background-color: palevioletred;
+    }
+
+
+.jumbotron {
+    margin: 0px;
+           }
+
+           .img-thumbnail {
+    height: 40%;
+}
+/* .row-content {
+    padding: 50px 0px;
+    border-bottom: 1px ridge;
+    } */
+
+    .card {border:none;
+    }
+    .card-img-top {
+        height:18rem;
+    }
+    .scale-down {object-fit: fill;
+    height: 20rem;
+width:100%;}
+
+    
+
