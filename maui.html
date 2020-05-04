@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Additional CSS must be placed after Bootstrap CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <title>Document</title>
+</head>
+
+<body style="background-color: black;">
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    GreenSide
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <nav class="navbar navbar-expand-sm sticky-top">
+        <div>
+            <ul class="navbar-nav text-white">
+                <li class="nav-item text-white"><a class="nav-link text-white active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Islands</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Activities</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">AboutUs</a></li>
+
+            </ul>
+            <span class="navbar-text ml-auto">
+                <a id="Cart" role="button" class="btn btn-primary">Cart</a>
+            </span>
+        </div>
+    </nav>
+
+    <div id="cartModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Cart</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form id="modalForm">
+                            <p id="pForm">hello</p>
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <h1>Choose your activity:</h1>
+        <div class="row">
+            <div class="col">
+                <div class="media text-white">
+                    <img class="mr-3" src="img/Sailing.jpg" alt="Generic placeholder image">
+                    <a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal"
+                        data-theVideo="http://www.youtube.com/embed/loFtozxZG0s">VIDEO</a>
+                    <div class="media-body">
+                        <h5 class="mt-0">Media heading</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <br>
+                        <p>Price $120</p>
+                        <div>
+                            <label for="priceS">Price</label>
+                            <input type="text" value="$120" id="priceS" disabled><br>
+                            <label for="peopleS">Amount of people</label>
+                            <p id="test">Hello</p>
+                            <input id="peopleS" type="number" min="0" name="peopleS">
+                            <button type="button" onclick="save_data1()" class="btn btn-primary">Add to Cart</button>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="media">
+                    <img class="mr-3" src="img/Snorkeling.jpg" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0">Media heading</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <br>
+                        <div>
+                            <label for="priceSn">Price</label>
+                            <input type="text" value="$130" id="priceSn" disabled><br>
+                            <label for="peopleSn">Amount of people</label>
+                            <input id="peopleSn" type="number" min="0" name="peopleSn" value="0">
+                            <button type="button" onclick="save_data2()" class="btn btn-primary">Add to Cart</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="media">
+                    <img class="mr-3" src="img/Surf.jpg" alt="Surf">
+                    <div class="media-body">
+                        <h5 class="mt-0">Media heading</h5>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <br>
+                        <div>
+                            <label for="priceSu">Price</label>
+                            <input type="text" value="$90" id="priceSu" disabled><br>
+                            <label for="peopleSu">Amount of people</label>
+                            <input id="peopleSu" type="number" min="0" name="peopleSu" value="0">
+                            <button type="button" onclick="save_data3()" class="btn btn-primary">Add to Cart</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div>
+                        <iframe width="100%" height="350" src=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
