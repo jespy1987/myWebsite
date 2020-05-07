@@ -47,10 +47,27 @@
                     <h3 class="modal-title">Cart</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="test">
                     <div class="container-fluid">
-                        <form id="modalForm">
-                            <p id="pForm">hello</p>
+                        <form id="cartForm">
+                            <!-- <div id="div">
+                                <div class="row form-group">
+                                    <h2 id="headerFor"></h2>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-12 col-sm-6 col-form-label" for="priceSa">Price</label>
+                                    <div class="col-12 col-sm-6">
+                                        <input class="form-control" type="text" id="priceS" name="priceS" disabled>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="col-12 col-sm-6 col-form-label" for="storedValue">Amount of
+                                            People</label>
+                                        <div class="col-12 col-sm-6">
+                                            <input class="form-control" type="text" id="storedValue" disabled name="storedValue">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
                         </form>
 
 
@@ -72,21 +89,23 @@
                     <a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal"
                         data-theVideo="http://www.youtube.com/embed/loFtozxZG0s">VIDEO</a>
                     <div class="media-body">
-                        <h5 class="mt-0">Media heading</h5>
+                        <h5 id="sailing" class="mt-0">Sailing</h5>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
                         purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
                         vulputate fringilla. Donec lacinia congue felis in faucibus.
                         <br>
                         <p>Price $120</p>
                         <div>
-                            <label for="priceS">Price</label>
-                            <input type="text" value="$120" id="priceS" disabled><br>
-                            <label for="peopleS">Amount of people</label>
-                            <p id="test">Hello</p>
-                            <input id="peopleS" type="number" min="0" name="peopleS">
-                            <button type="button" onclick="save_data1()" class="btn btn-primary">Add to Cart</button>
-                            
-                            
+                            <div id="sailing">
+                                <label for="priceSa">Price for sailing</label>
+                                <input type="text" value="$120" id="priceSa" disabled><br>
+                                <label for="peopleSa">Amount of people</label>
+
+                                <input id="peopleSa" type="number" min="0" name="peopleSail">
+                            </div>
+                            <button type="button" id="btnSailing" class="btn btn-primary">Add to Cart</button>
+
+
                         </div>
                     </div>
                 </div>
@@ -97,18 +116,20 @@
                 <div class="media">
                     <img class="mr-3" src="img/Snorkeling.jpg" alt="Generic placeholder image">
                     <div class="media-body">
-                        <h5 class="mt-0">Media heading</h5>
+                        <h5 id="snorkeling" class="mt-0">Snorkeling</h5>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
                         purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
                         vulputate fringilla. Donec lacinia congue felis in faucibus.
                         <br>
                         <div>
-                            <label for="priceSn">Price</label>
-                            <input type="text" value="$130" id="priceSn" disabled><br>
-                            <label for="peopleSn">Amount of people</label>
-                            <input id="peopleSn" type="number" min="0" name="peopleSn" value="0">
-                            <button type="button" onclick="save_data2()" class="btn btn-primary">Add to Cart</button>
-                            
+                            <div id="snorkeling">
+                                <label for="priceSn">Price for snorkeling</label>
+                                <input type="text" value="$130" id="priceSn" disabled><br>
+                                <label for="peopleSn">Amount of people</label>
+                                <input id="peopleSn" type="number" min="0" name="peopleSn" value="0">
+                            </div>
+                            <button type="button" id="btnSnorkeling" class="btn btn-primary">Add to Cart</button>
+
                         </div>
                     </div>
                 </div>
@@ -129,8 +150,8 @@
                             <input type="text" value="$90" id="priceSu" disabled><br>
                             <label for="peopleSu">Amount of people</label>
                             <input id="peopleSu" type="number" min="0" name="peopleSu" value="0">
-                            <button type="button" onclick="save_data3()" class="btn btn-primary">Add to Cart</button>
-                            
+                            <button type="button" id="btnSurfing" class="btn btn-primary">Add to Cart</button>
+
                         </div>
                     </div>
                 </div>
