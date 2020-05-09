@@ -11,40 +11,43 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <title>Document</title>
 </head>
 
-<body style="background-color: black;">
-    <header class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    GreenSide
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark justify-content-between">
+            <a class="navbar-brand" href="#"><img src="img/globe3.jpg" width=40px;></a>
+            <h1 class="color-primary">GreenSide</h1>
+            <div class="container">
+
+                <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#islandNavbar">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="islandNavbar">
+                    <div class="navbar-text ml-auto">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item active"><a class="nav-link" href="index.html"><i
+                                        class="fa fa-home fa-lg"></i>Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Islands</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Activities</a></li>
+                            <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
+            <a type="button" class="ml-auto" id="Cart"><span class="color-primary"><i class="fa fa-shopping-cart fa-2x"></i>Cart</span></a>
+        </nav>
     </header>
-    <nav class="navbar navbar-expand-sm sticky-top">
-        <div>
-            <ul class="navbar-nav text-white">
-                <li class="nav-item text-white"><a class="nav-link text-white active" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#">Islands</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#">Activities</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#">AboutUs</a></li>
-
-            </ul>
-            <span class="navbar-text ml-auto">
-                <a id="Cart" role="button" class="btn btn-primary">Cart</a>
-            </span>
-        </div>
-    </nav>
-
     <div id="cartModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Cart</h3>
+                    <h3 class="modal-title"><span class="color-primary"><i class="fa fa-shopping-cart"></span></i>Cart</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body" id="test">
@@ -68,6 +71,11 @@
                                     </div>
                                 </div>
                             </div> -->
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                                    data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Confirm</button>
+                            </div>
                         </form>
 
 
@@ -80,77 +88,103 @@
 
 
 
-    <div class="container">
-        <h1>Choose your activity:</h1>
-        <div class="row">
+    <div class="container" id="mauiActivity">
+        <h1 class="p-3">Choose your activity:</h1>
+        <div class="row p-3">
             <div class="col">
                 <div class="media text-white">
                     <img class="mr-3" src="img/Sailing.jpg" alt="Generic placeholder image">
-                    <a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal"
-                        data-theVideo="http://www.youtube.com/embed/loFtozxZG0s">VIDEO</a>
+                    <!-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal"
+                        data-theVideo="http://www.youtube.com/embed/loFtozxZG0s">VIDEO</a> -->
                     <div class="media-body">
-                        <h5 id="sailing" class="mt-0">Sailing</h5>
+                        <h3 id="sailing" class="mt-0">Sailing</h3>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
                         purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
                         vulputate fringilla. Donec lacinia congue felis in faucibus.
                         <br>
                         <p>Price $120</p>
-                        <div>
-                            <div id="sailing">
-                                <label for="priceSa">Price $</label>
-                                <input type="text" value="120" id="priceSa" disabled><br>
-                                <label for="peopleSa">Amount of people</label>
-
-                                <input id="peopleSa" type="number" min="0" name="peopleSail">
+                        <form>
+                            <div class="row form-group">
+                                <label class="col-12 col-sm-6 col-form-label" for="priceSa">Price $</label>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" value="120" id="priceSa" disabled>
+                                </div>
                             </div>
-                            <button type="button" id="btnSailing" class="btn btn-primary">Add to Cart</button>
-
-
-                        </div>
+                            <div class="row form-group">
+                                <label class="col-12 col-sm-6 col-form-label" for="peopleSa">Amount of people</label>
+                                <div class="col-12 col-sm-6">
+                                    <input id="peopleSa" type="number" min="0" name="peopleSail">
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <button type="button" id="btnSailing" class="btn btn-primary ml-3">Add to
+                                            Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row p-3">
             <div class="col">
-                <div class="media">
+                <div class="media text-white">
                     <img class="mr-3" src="img/Snorkeling.jpg" alt="Generic placeholder image">
                     <div class="media-body">
-                        <h5 id="snorkeling" class="mt-0">Snorkeling</h5>
+                        <h3 id="snorkeling" class="mt-0">Snorkeling</h3>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
                         purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
                         vulputate fringilla. Donec lacinia congue felis in faucibus.
                         <br>
                         <div>
-                            <div id="snorkeling">
-                                <label for="priceSn">Price $</label>
-                                <input type="text" value="130" id="priceSn" disabled><br>
-                                <label for="peopleSn">Amount of people</label>
-                                <input id="peopleSn" type="number" min="0" name="peopleSn" value="0">
+                            <div class="row form-group">
+                                <label class="col-12 col-sm-6 col-form-label" for="priceSn">Price $</label>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" value="130" id="priceSn" disabled>
+                                </div>
                             </div>
-                            <button type="button" id="btnSnorkeling" class="btn btn-primary">Add to Cart</button>
-
+                            <div class="row form-group">
+                                <label class="col-12 col-sm-6 col-form-label" for="peopleSn">Amount of people</label>
+                                <div class="col-12 col-sm-6">
+                                    <input id="peopleSn" type="number" min="0" name="peopleSn" value="0">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <button type="button" id="btnSnorkeling" class="btn btn-primary ml-3">Add to
+                                    Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row p-3">
             <div class="col">
-                <div class="media">
+                <div class="media text-white">
                     <img class="mr-3" src="img/Surf.jpg" alt="Surf">
                     <div class="media-body">
-                        <h5 class="mt-0">Media heading</h5>
+                        <h3 class="mt-0">Surfing</h3>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
                         purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
                         vulputate fringilla. Donec lacinia congue felis in faucibus.
                         <br>
                         <div>
-                            <label for="priceSu">Price $</label>
-                            <input type="text" value="90" id="priceSu" disabled><br>
-                            <label for="peopleSu">Amount of people</label>
-                            <input id="peopleSu" type="number" min="0" name="peopleSu" value="0">
-                            <button type="button" id="btnSurfing" class="btn btn-primary">Add to Cart</button>
+                            <div class="row form-group">
+                                <label class="col-12 col-sm-6 col-form-label" for="priceSu">Price $</label>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" value="90" id="priceSu" disabled>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-12 col-sm-6 col-form-label" for="peopleSu">Amount of people</label>
+                                <div class="col-12 col-sm-6">
+                                    <input id="peopleSu" type="number" min="0" name="peopleSu" value="0">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <button type="button" id="btnSurfing" class="btn btn-primary ml-3">Add to Cart</button>
+                            </div>
 
                         </div>
                     </div>
@@ -160,7 +194,7 @@
     </div>
 
 
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <!-- <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -171,10 +205,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <footer>
-
+    <footer class="footer bg-dark">
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Copyright &copy; 2020 - GreenSide</p>
     </footer>
     <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>

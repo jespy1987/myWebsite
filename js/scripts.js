@@ -56,21 +56,31 @@ $("#Cart").click(function () {
 function addElement(addElem, id_price, id_div, name_activity) {
 
   if ((addElem === "") || (addElem === "0")) {
-    if (document.getElementById("div" + id_div)) {
-      let div_del = document.getElementById("div" + id_div);
-      div_del.parentNode.removeChild(div_del);
-    }
+    // if (document.getElementById("div" + id_div)) {
+    //   let div_del = document.getElementById("div" + id_div);
+    //   div_del.parentNode.removeChild(div_del);
+    // }
     
     return 0;
   }
   if (document.getElementById("div" + id_div)) {
-    let div_del = document.getElementById("div" + id_div);
-    div_del.parentNode.removeChild(div_del);
+let refreshAm=document.getElementById("amountOf"+id_div).value;
+var a=parseInt(refreshAm);
+var b=parseInt(addElem);
+var c=a+b;
+document.getElementById("amountOf"+id_div).value=c;
+let refresh=document.getElementById("amountOf"+id_div).value;
+var act_price = document.getElementById(id_price).value;
+var totalPrice = total(refresh, act_price);
+document.getElementById("total" + id_div).value = totalPrice;
+return 0;
+    // let div_del = document.getElementById("div" + id_div);
+    // div_del.parentNode.removeChild(div_del);
   }
   var div = document.createElement("div");
   div.setAttribute("id", "div" + id_div);
-  div.innerHTML = "<h2 id='header" + id_div + "'></h2><label for='price" + id_div + "'>Price $</label><input type='text' disabled id='price" + id_div + "'><br><label for='amountOf" + id_div + "'>Amount of people</label><input type='text' disabled id='amountOf" + id_div + "'><br><label for='total" + id_div + "'>Total</label><input type='text' disabled id='total" + id_div + "'>";
-  var parent = document.getElementById("test");
+  div.innerHTML = "<h4 id='header" + id_div + "'></h4><div class='form-row'><label class='col-6' for='price" + id_div + "'>Price $</label><div class='col-6'><input class='form-control' type='text' disabled id='price" + id_div + "'></div><label class='col-6' for='amountOf" + id_div + "'>Amount of people</label><div class='col-6'><input class='form-control' type='number' disabled id='amountOf" + id_div + "'></div><label class='col-6' for='total" + id_div + "'>Total</label><div class='col-6'><input class ='form-control' type='text' disabled id='total" + id_div + "'></div></div>";
+  var parent = document.getElementById("cartForm");
   parent.appendChild(div);
   var set_amount = document.getElementById("amountOf" + id_div);
   set_amount.value = addElem;
@@ -83,8 +93,21 @@ function addElement(addElem, id_price, id_div, name_activity) {
   var price_string = act_price.value;
   var totalPrice = total(addElem, price_string);
   document.getElementById("total" + id_div).value = totalPrice;
+  var removeBtn=document.createElement("button");
+  removeBtn.setAttribute('class','btn btn-primary');
+  removeBtn.setAttribute('type','button');
+  removeBtn.setAttribute('id','remove'+id_div);
+  removeBtn.innerHTML="Remove";
+parent.appendChild(removeBtn);
+  document.getElementById('remove'+id_div).addEventListener('click', removeFun);
+  
 
 }
+// function removeFun(){
+//   let div_del = document.getElementById("div" + id_div);
+//   div_del.parentNode.removeChild(div_del);
+//  }
+
 
 
 function total(x, y) {
