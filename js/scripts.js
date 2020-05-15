@@ -1,9 +1,13 @@
 
+var cart_count=0;
+var cart_indicator=document.getElementById("cart_count");
+
 function save_data(id_amount, id_price, id_div, name_activity) {
   var input = document.getElementById(id_amount);
   localStorage.setItem("people", input.value);
   var storedValue1 = localStorage.getItem("people");
   addElement(storedValue1, id_price, id_div, name_activity);
+
 }
 
 $("#btnSailing").click(function () {
@@ -54,7 +58,9 @@ $("#Cart").click(function () {
 
 
 function addElement(addElem, id_price, id_div, name_activity) {
-
+  
+  
+  
   if ((addElem === "") || (addElem === "0")) {
     // if (document.getElementById("div" + id_div)) {
     //   let div_del = document.getElementById("div" + id_div);
@@ -73,6 +79,9 @@ let refresh=document.getElementById("amountOf"+id_div).value;
 var act_price = document.getElementById(id_price).value;
 var totalPrice = total(refresh, act_price);
 document.getElementById("total" + id_div).value = totalPrice;
+cart_count+=1;
+
+cart_indicator.innerHTML=cart_count;
 return 0;
     // let div_del = document.getElementById("div" + id_div);
     // div_del.parentNode.removeChild(div_del);
@@ -99,14 +108,22 @@ return 0;
   removeBtn.setAttribute('id','remove'+id_div);
   removeBtn.innerHTML="Remove";
 parent.appendChild(removeBtn);
-  document.getElementById('remove'+id_div).addEventListener('click', removeFun);
+cart_count+=1;
+cart_indicator.innerHTML=cart_count;
+
+  document.getElementById('remove'+id_div).addEventListener('click', ()=> removeFun(id_div));
   
 
 }
-// function removeFun(){
-//   let div_del = document.getElementById("div" + id_div);
-//   div_del.parentNode.removeChild(div_del);
-//  }
+function removeFun(id_div){
+   let div_del = document.getElementById("div" + id_div);
+   let btn_del=document.getElementById('remove'+id_div);
+   div_del.parentNode.removeChild(div_del);
+   btn_del.parentNode.removeChild(btn_del);
+   sub_total();
+   cart_count-=1;
+   cart_indicator.innerHTML=cart_count;
+  }
 
 
 

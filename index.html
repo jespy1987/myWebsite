@@ -18,26 +18,39 @@
 
 <body>
     <header class="hero">
-        <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark justify-content-between">
-            <a class="navbar-brand" href="#"><img src="img/globe3.jpg" width=40px;></a>
-            <h1 class="color-primary">GreenSide</h1>
-            <div class="container">
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark justify-content-between">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="img/globe3.jpg" width=40px;></a>
+                <h1 class="color_primary">GreenSide</h1>
 
-                <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#islandNavbar">
 
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#islandNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="islandNavbar">
+                <div class="collapse navbar-collapse ml-auto" id="islandNavbar">
                     <div class="navbar-text ml-auto">
                         <ul class="navbar-nav ">
                             <li class="nav-item active"><a class="nav-link" href="#"><i
                                         class="fa fa-home fa-lg"></i>Home</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Islands</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Islands
+                                </a>
+                                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="maui.html">Maui</a>
+                                    <a class="dropdown-item" href="#">Oahu</a>
+                                    <a class="dropdown-item" href="#">Kauai</a>
+                                    <a class="dropdown-item" href="#">Big Island</a>
+                                    <a class="dropdown-item" href="#">Molokai</a>
+
+                                </div>
+                            </li>
                             <li class="nav-item"><a class="nav-link" href="#">Activities</a></li>
                             <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
 
-                            <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -54,7 +67,7 @@
     <div id="card-container">
         <h2>Choose your Island</h2>
         <div class="card-group">
-            
+
             <div class="card">
                 <img class="img-thumbnail card-img-top" src="img/Maui.png" alt="Maui">
                 <div class="card-body">

@@ -18,12 +18,13 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark justify-content-between">
-            <a class="navbar-brand" href="#"><img src="img/globe3.jpg" width=40px;></a>
-            <h1 class="color-primary">GreenSide</h1>
-            <div class="container">
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark justify-content-between">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="img/globe3.jpg" width=40px;></a>
+                <h1 class="color_primary">GreenSide</h1>
 
-                <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#islandNavbar">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#islandNavbar">
 
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,22 +33,40 @@
                         <ul class="navbar-nav ">
                             <li class="nav-item active"><a class="nav-link" href="index.html"><i
                                         class="fa fa-home fa-lg"></i>Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Islands</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Islands
+                                </a>
+                                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="maui.html">Maui</a>
+                                    <a class="dropdown-item" href="#">Oahu</a>
+                                    <a class="dropdown-item" href="#">Kauai</a>
+                                    <a class="dropdown-item" href="#">Big Island</a>
+                                    <a class="dropdown-item" href="#">Molokai</a>
+
+                                </div>
+                            </li>
                             <li class="nav-item"><a class="nav-link" href="#">Activities</a></li>
                             <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact</a></li>
+                            <li class="nav-item">
+                                <div class="wrapper"><a type="button" class="nav-link" id="Cart">Cart
+                                        <i class="fa fa-shopping-cart fa-lg color_primary"></i><span
+                                            class="color_important" id="cart_count"></span></a></div>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <a type="button" class="ml-auto" id="Cart"><span class="color-primary"><i class="fa fa-shopping-cart fa-2x"></i>Cart</span></a>
         </nav>
     </header>
     <div id="cartModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title"><span class="color-primary"><i class="fa fa-shopping-cart"></span></i>Cart</h3>
+                    <h3 class="modal-title"><span class="color_primary"><i class="fa fa-shopping-cart"></span></i>Cart
+                    </h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body" id="test">
@@ -88,11 +107,11 @@
 
 
 
-    <div class="container" id="mauiActivity">
+    <div class="container" id="main">
         <h1 class="p-3">Choose your activity:</h1>
         <div class="row p-3">
             <div class="col">
-                <div class="media text-white">
+                <div class="media text-white d-block d-md-flex">
                     <img class="mr-3" src="img/Sailing.jpg" alt="Generic placeholder image">
                     <!-- <a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal"
                         data-theVideo="http://www.youtube.com/embed/loFtozxZG0s">VIDEO</a> -->
@@ -129,7 +148,7 @@
         </div>
         <div class="row p-3">
             <div class="col">
-                <div class="media text-white">
+                <div class="media text-white d-block d-md-flex">
                     <img class="mr-3" src="img/Snorkeling.jpg" alt="Generic placeholder image">
                     <div class="media-body">
                         <h3 id="snorkeling" class="mt-0">Snorkeling</h3>
@@ -161,7 +180,7 @@
         </div>
         <div class="row p-3">
             <div class="col">
-                <div class="media text-white">
+                <div class="media text-white d-block d-md-flex">
                     <img class="mr-3" src="img/Surf.jpg" alt="Surf">
                     <div class="media-body">
                         <h3 class="mt-0">Surfing</h3>
